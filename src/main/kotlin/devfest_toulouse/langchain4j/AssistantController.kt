@@ -1,6 +1,7 @@
-package dev2next.langchain4j
+package devfest_toulouse.langchain4j
 
 import io.quarkus.logging.Log
+import io.quarkus.qute.Location
 import io.quarkus.qute.Template
 import io.quarkus.qute.TemplateInstance
 import jakarta.inject.Inject
@@ -18,7 +19,7 @@ class AssistantController {
     lateinit var assistant: AirlineLoyaltyAssistant
 
     @Inject
-    @io.quarkus.qute.Location("AssistantController/index.html")
+    @Location("AssistantController/index.html")
     lateinit var index: Template
 
     /**
