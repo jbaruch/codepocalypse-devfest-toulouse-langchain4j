@@ -1,4 +1,4 @@
-package dev2next.langchain4j
+package devfest_toulouse.langchain4j
 
 import dev.langchain4j.data.document.Document
 import dev.langchain4j.data.document.Metadata
@@ -12,6 +12,7 @@ import io.quarkus.logging.Log
 import io.quarkus.runtime.Startup
 import jakarta.annotation.PostConstruct
 import jakarta.enterprise.context.ApplicationScoped
+import jakarta.enterprise.inject.Vetoed
 import jakarta.inject.Inject
 import org.jsoup.Jsoup
 import java.util.concurrent.CompletableFuture
@@ -22,6 +23,7 @@ import java.util.concurrent.CompletableFuture
  * 
  * Documents are loaded asynchronously in parallel for improved performance.
  */
+@Vetoed
 @ApplicationScoped
 @Startup
 class DocumentIngestionService {

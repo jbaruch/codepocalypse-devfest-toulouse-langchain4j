@@ -1,4 +1,4 @@
-package dev2next.langchain4j
+package devfest_toulouse.langchain4j
 
 import dev.langchain4j.data.segment.TextSegment
 import dev.langchain4j.model.embedding.EmbeddingModel
@@ -12,11 +12,13 @@ import dev.langchain4j.store.embedding.inmemory.InMemoryEmbeddingStore
 import jakarta.enterprise.context.ApplicationScoped
 import jakarta.enterprise.inject.Produces
 import jakarta.inject.Singleton
+import jakarta.enterprise.inject.Vetoed
 
 /**
  * Configuration for RAG (Retrieval Augmented Generation) components.
  * Provides beans for embedding store and retrieval augmentor.
  */
+@Vetoed
 @ApplicationScoped
 class RagConfiguration {
 

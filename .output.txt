@@ -1,0 +1,1312 @@
+### Easy RAG Recursion Configuration
+
+Source: https://github.com/quarkiverse/quarkus-langchain4j/blob/main/docs/modules/ROOT/pages/includes/quarkus-langchain4j-easy-rag.adoc
+
+Determines whether to recursively ingest documents from subdirectories.
+
+```APIDOC
+quarkus.langchain4j.easy-rag.recursive
+  - Whether to recursively ingest documents from subdirectories.
+  - Type: boolean
+  - Default: `true`
+```
+
+--------------------------------
+
+### Easy RAG Recursion Configuration
+
+Source: https://github.com/quarkiverse/quarkus-langchain4j/blob/main/docs/modules/ROOT/pages/includes/quarkus-langchain4j-easy-rag_quarkus.langchain4j.adoc
+
+Determines whether to recursively ingest documents from subdirectories.
+
+```APIDOC
+quarkus.langchain4j.easy-rag.recursive
+  - Whether to recursively ingest documents from subdirectories.
+  - Type: boolean
+  - Default: `true`
+```
+
+--------------------------------
+
+### Easy RAG Path Configuration
+
+Source: https://github.com/quarkiverse/quarkus-langchain4j/blob/main/docs/modules/ROOT/pages/includes/quarkus-langchain4j-easy-rag_quarkus.langchain4j.adoc
+
+Configures the path to the directory containing documents for ingestion. Supports absolute or relative paths, with relative paths resolved against the current working directory.
+
+```APIDOC
+quarkus.langchain4j.easy-rag.path
+  - Path to the directory containing the documents to be ingested. This is either an absolute or relative path in the filesystem. A relative path is resolved against the current working directory at runtime.
+  - Type: string
+  - Default: required
+```
+
+--------------------------------
+
+### Easy RAG Path Configuration
+
+Source: https://github.com/quarkiverse/quarkus-langchain4j/blob/main/docs/modules/ROOT/pages/includes/quarkus-langchain4j-easy-rag.adoc
+
+Configures the path to the directory containing documents for ingestion. Supports absolute or relative paths, with relative paths resolved against the current working directory.
+
+```APIDOC
+quarkus.langchain4j.easy-rag.path
+  - Path to the directory containing the documents to be ingested. This is either an absolute or relative path in the filesystem. A relative path is resolved against the current working directory at runtime.
+  - Type: string
+  - Default: required
+```
+
+--------------------------------
+
+### Easy RAG Path Type Configuration
+
+Source: https://github.com/quarkiverse/quarkus-langchain4j/blob/main/docs/modules/ROOT/pages/includes/quarkus-langchain4j-easy-rag_quarkus.langchain4j.adoc
+
+Specifies whether the 'path' configuration refers to a filesystem reference or a classpath reference.
+
+```APIDOC
+quarkus.langchain4j.easy-rag.path-type
+  - Does path() represent a filesystem reference or a classpath reference?
+  - Type: string
+  - Default: `filesystem`
+  - Allowed values: `filesystem`, `classpath`
+```
+
+--------------------------------
+
+### Easy RAG Max Overlap Size Configuration
+
+Source: https://github.com/quarkiverse/quarkus-langchain4j/blob/main/docs/modules/ROOT/pages/includes/quarkus-langchain4j-easy-rag.adoc
+
+Configures the maximum overlap size in tokens between document segments.
+
+```APIDOC
+quarkus.langchain4j.easy-rag.max-overlap-size
+  - Maximum overlap size when splitting documents, in tokens.
+  - Type: int
+  - Default: `0`
+```
+
+--------------------------------
+
+### Easy RAG Configuration Properties
+
+Source: https://github.com/quarkiverse/quarkus-langchain4j/blob/main/docs/modules/ROOT/pages/rag-easy-rag.adoc
+
+Configuration properties for the Easy RAG feature in Quarkus Langchain4j. These properties control document processing, retrieval, and file ingestion.
+
+```APIDOC
+quarkus.langchain4j.easy-rag.max-overlap-size
+  - The overlap between adjacent documents. Default is 30.
+
+quarkus.langchain4j.easy-rag.max-results
+  - Controls the number of retrieved documents. The default is 5.
+
+quarkus.langchain4j.easy-rag.path-matcher
+  - Denotes which files to ingest. The default is `glob:**`, meaning all files recursively.
+
+-Dtika.config=<path_to_tika_config.xml>
+  - Specifies a regular XML config file for Apache Tika parsers for finer-grained control, such as disabling OCR. Refer to Tika documentation for details.
+```
+
+--------------------------------
+
+### Easy RAG Max Overlap Size Configuration
+
+Source: https://github.com/quarkiverse/quarkus-langchain4j/blob/main/docs/modules/ROOT/pages/includes/quarkus-langchain4j-easy-rag_quarkus.langchain4j.adoc
+
+Configures the maximum overlap size in tokens between document segments.
+
+```APIDOC
+quarkus.langchain4j.easy-rag.max-overlap-size
+  - Maximum overlap size when splitting documents, in tokens.
+  - Type: int
+  - Default: `0`
+```
+
+--------------------------------
+
+### Easy RAG Path Type Configuration
+
+Source: https://github.com/quarkiverse/quarkus-langchain4j/blob/main/docs/modules/ROOT/pages/includes/quarkus-langchain4j-easy-rag.adoc
+
+Specifies whether the 'path' configuration refers to a filesystem reference or a classpath reference.
+
+```APIDOC
+quarkus.langchain4j.easy-rag.path-type
+  - Does path() represent a filesystem reference or a classpath reference?
+  - Type: string
+  - Default: `filesystem`
+  - Allowed values: `filesystem`, `classpath`
+```
+
+--------------------------------
+
+### Run Quarkus Chatbot Example
+
+Source: https://github.com/quarkiverse/quarkus-langchain4j/blob/main/samples/chatbot-easy-rag/README.md
+
+Commands to set the OpenAI API key and run the Quarkus chatbot example in development mode.
+
+```bash
+export QUARKUS_LANGCHAIN4J_OPENAI_API_KEY=<your-openai-api-key>
+```
+
+```bash
+mvn quarkus:dev
+```
+
+--------------------------------
+
+### Enable Reusable Embeddings
+
+Source: https://github.com/quarkiverse/quarkus-langchain4j/blob/main/docs/modules/ROOT/pages/rag-easy-rag.adoc
+
+Enables the reuse of computed embeddings to speed up local development by loading existing embeddings or saving new ones to a file.
+
+```properties
+quarkus.langchain4j.easy-rag.reuse-embeddings.enabled=true
+```
+
+--------------------------------
+
+### Easy RAG Max Segment Size Configuration
+
+Source: https://github.com/quarkiverse/quarkus-langchain4j/blob/main/docs/modules/ROOT/pages/includes/quarkus-langchain4j-easy-rag_quarkus.langchain4j.adoc
+
+Sets the maximum segment size in tokens when splitting documents.
+
+```APIDOC
+quarkus.langchain4j.easy-rag.max-segment-size
+  - Maximum segment size when splitting documents, in tokens.
+  - Type: int
+  - Default: `300`
+```
+
+--------------------------------
+
+### Easy RAG Max Segment Size Configuration
+
+Source: https://github.com/quarkiverse/quarkus-langchain4j/blob/main/docs/modules/ROOT/pages/includes/quarkus-langchain4j-easy-rag.adoc
+
+Sets the maximum segment size in tokens when splitting documents.
+
+```APIDOC
+quarkus.langchain4j.easy-rag.max-segment-size
+  - Maximum segment size when splitting documents, in tokens.
+  - Type: int
+  - Default: `300`
+```
+
+--------------------------------
+
+### Easy RAG Path Matcher Configuration
+
+Source: https://github.com/quarkiverse/quarkus-langchain4j/blob/main/docs/modules/ROOT/pages/includes/quarkus-langchain4j-easy-rag.adoc
+
+Defines a matcher for filtering which files from a directory should be ingested, using java.nio.file.FileSystem path matcher syntax. The default matches all files recursively.
+
+```APIDOC
+quarkus.langchain4j.easy-rag.path-matcher
+  - Matcher used for filtering which files from the directory should be ingested. This uses the `java.nio.file.FileSystem` path matcher syntax. Example: `glob:**.txt` to recursively match all files with the `.txt` extension. The default is `glob:**`, recursively matching all files.
+  - Type: string
+  - Default: `glob:**`
+```
+
+--------------------------------
+
+### Easy RAG Path Matcher Configuration
+
+Source: https://github.com/quarkiverse/quarkus-langchain4j/blob/main/docs/modules/ROOT/pages/includes/quarkus-langchain4j-easy-rag_quarkus.langchain4j.adoc
+
+Defines a matcher for filtering which files from a directory should be ingested, using java.nio.file.FileSystem path matcher syntax. The default matches all files recursively.
+
+```APIDOC
+quarkus.langchain4j.easy-rag.path-matcher
+  - Matcher used for filtering which files from the directory should be ingested. This uses the `java.nio.file.FileSystem` path matcher syntax. Example: `glob:**.txt` to recursively match all files with the `.txt` extension. The default is `glob:**`, recursively matching all files.
+  - Type: string
+  - Default: `glob:**`
+```
+
+--------------------------------
+
+### Easy-RAG Configuration Properties
+
+Source: https://github.com/quarkiverse/quarkus-langchain4j/blob/main/docs/modules/ROOT/pages/includes/quarkus-langchain4j-easy-rag.adoc
+
+Configuration properties for Quarkus Langchain4j's Easy-RAG module. These settings control various aspects of document processing and retrieval.
+
+```APIDOC
+quarkus.langchain4j.easy-rag.max-overlap-size
+  Description: Maximum overlap (in tokens) when splitting documents.
+  Environment variable: QUARKUS_LANGCHAIN4J_EASY_RAG_MAX_OVERLAP_SIZE
+  Type: int
+  Default: 30
+
+quarkus.langchain4j.easy-rag.max-results
+  Description: Maximum number of results to return when querying the retrieval augmentor.
+  Environment variable: QUARKUS_LANGCHAIN4J_EASY_RAG_MAX_RESULTS
+  Type: int
+  Default: 5
+
+quarkus.langchain4j.easy-rag.min-score
+  Description: The minimum score for results to return when querying the retrieval augmentor.
+  Environment variable: QUARKUS_LANGCHAIN4J_EASY_RAG_MIN_SCORE
+  Type: double
+  Default: (not specified)
+
+quarkus.langchain4j.easy-rag.ingestion-strategy
+  Description: The strategy to decide whether document ingestion into the store should happen at startup or not. The default is ON. Changing to OFF generally only makes sense if running against a persistent embedding store that was already populated. When set to MANUAL, it is expected that the application will inject and call the io.quarkiverse.langchain4j.easyrag.EasyRagManualIngestion bean to trigger the ingestion when desired.
+  Environment variable: QUARKUS_LANGCHAIN4J_EASY_RAG_INGESTION_STRATEGY
+  Type: String
+  Allowed values: on, off, manual
+  Default: on
+
+quarkus.langchain4j.easy-rag.reuse-embeddings.enabled
+  Description: Whether or not to reuse embeddings.
+  Environment variable: QUARKUS_LANGCHAIN4J_EASY_RAG_REUSE_EMBEDDINGS_ENABLED
+  Type: boolean
+  Default: false
+
+quarkus.langchain4j.easy-rag.reuse-embeddings.file
+  Description: The file path to load/save embeddings, assuming quarkus.langchain4j.easy-rag.reuse-embeddings.enabled == true.
+  Defaults to easy-rag-embeddings.json in the current directory.
+  Environment variable: QUARKUS_LANGCHAIN4J_EASY_RAG_REUSE_EMBEDDINGS_FILE
+  Type: String
+  Default: easy-rag-embeddings.json
+```
+
+--------------------------------
+
+### Easy-RAG Configuration Properties
+
+Source: https://github.com/quarkiverse/quarkus-langchain4j/blob/main/docs/modules/ROOT/pages/includes/quarkus-langchain4j-easy-rag_quarkus.langchain4j.adoc
+
+Configuration properties for Quarkus Langchain4j's Easy-RAG module. These settings control various aspects of document processing and retrieval.
+
+```APIDOC
+quarkus.langchain4j.easy-rag.max-overlap-size
+  Description: Maximum overlap (in tokens) when splitting documents.
+  Environment variable: QUARKUS_LANGCHAIN4J_EASY_RAG_MAX_OVERLAP_SIZE
+  Type: int
+  Default: 30
+
+quarkus.langchain4j.easy-rag.max-results
+  Description: Maximum number of results to return when querying the retrieval augmentor.
+  Environment variable: QUARKUS_LANGCHAIN4J_EASY_RAG_MAX_RESULTS
+  Type: int
+  Default: 5
+
+quarkus.langchain4j.easy-rag.min-score
+  Description: The minimum score for results to return when querying the retrieval augmentor.
+  Environment variable: QUARKUS_LANGCHAIN4J_EASY_RAG_MIN_SCORE
+  Type: double
+  Default: (not specified)
+
+quarkus.langchain4j.easy-rag.ingestion-strategy
+  Description: The strategy to decide whether document ingestion into the store should happen at startup or not. The default is ON. Changing to OFF generally only makes sense if running against a persistent embedding store that was already populated. When set to MANUAL, it is expected that the application will inject and call the io.quarkiverse.langchain4j.easyrag.EasyRagManualIngestion bean to trigger the ingestion when desired.
+  Environment variable: QUARKUS_LANGCHAIN4J_EASY_RAG_INGESTION_STRATEGY
+  Type: String
+  Allowed values: on, off, manual
+  Default: on
+
+quarkus.langchain4j.easy-rag.reuse-embeddings.enabled
+  Description: Whether or not to reuse embeddings.
+  Environment variable: QUARKUS_LANGCHAIN4J_EASY_RAG_REUSE_EMBEDDINGS_ENABLED
+  Type: boolean
+  Default: false
+
+quarkus.langchain4j.easy-rag.reuse-embeddings.file
+  Description: The file path to load/save embeddings, assuming quarkus.langchain4j.easy-rag.reuse-embeddings.enabled == true.
+  Defaults to easy-rag-embeddings.json in the current directory.
+  Environment variable: QUARKUS_LANGCHAIN4J_EASY_RAG_REUSE_EMBEDDINGS_FILE
+  Type: String
+  Default: easy-rag-embeddings.json
+```
+
+--------------------------------
+
+### Switch to Ollama Provider
+
+Source: https://github.com/quarkiverse/quarkus-langchain4j/blob/main/samples/chatbot-easy-rag/README.md
+
+Example of replacing the OpenAI dependency with the Ollama dependency in a Maven project to use Ollama as the language model provider.
+
+```xml
+<dependency>
+            <groupId>io.quarkiverse.langchain4j</groupId>
+            <artifactId>quarkus-langchain4j-openai</artifactId>
+            <version>${quarkus-langchain4j.version}</version>
+        </dependency>
+```
+
+```xml
+<dependency>
+            <groupId>io.quarkiverse.langchain4j</groupId>
+            <artifactId>quarkus-langchain4j-ollama</artifactId>
+            <version>${quarkus-langchain4j.version}</version>
+        </dependency>
+```
+
+--------------------------------
+
+### RAG (Retrieval-Augmented Generation) Setup
+
+Source: https://github.com/quarkiverse/quarkus-langchain4j/blob/main/integration-tests/simple-ollama/src/main/resources/META-INF/resources/index.html
+
+Guides on setting up Retrieval-Augmented Generation (RAG) pipelines in Quarkus using Langchain4j. This involves configuring document loaders, text splitters, and vector stores.
+
+```Java
+import dev.langchain4j.data.document.DocumentLoader;
+import dev.langchain4j.data.document.splitter.DocumentSplitter;
+import dev.langchain4j.store.embedding.EmbeddingStore;
+import dev.langchain4j.rag.content.retriever.ContentRetriever;
+import dev.langchain4j.rag.content.retriever.EmbeddingStoreContentRetriever;
+import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.inject.Inject;
+
+@ApplicationScoped
+public class RagService {
+
+    private final ContentRetriever contentRetriever;
+
+    @Inject
+    public RagService(EmbeddingStore<dev.langchain4j.data.embedding.Embedding> embeddingStore) {
+        // Example: Using a DocumentLoader and a DocumentSplitter
+        DocumentLoader documentLoader = new dev.langchain4j.data.document.FileSystemDocumentLoader("path/to/your/documents");
+        DocumentSplitter documentSplitter = new dev.langchain4j.data.document.splitter.TokenWindowDocumentSplitter(1000, 100);
+
+        // Ingest documents into the embedding store (implementation specific)
+        // embeddingStore.addAll(documentSplitter.split(documentLoader.load()));
+
+        this.contentRetriever = EmbeddingStoreContentRetriever.builder()
+                .embeddingStore(embeddingStore)
+                .maxResults(5)
+                .build();
+    }
+
+    public ContentRetriever getContentRetriever() {
+        return contentRetriever;
+    }
+}
+```
+
+--------------------------------
+
+### Configure Document Ingestion Path
+
+Source: https://github.com/quarkiverse/quarkus-langchain4j/blob/main/docs/modules/ROOT/pages/rag-easy-rag.adoc
+
+Specifies the path for document ingestion. Documents in this path will be automatically scanned and ingested into the embedding store on application startup.
+
+```properties
+quarkus.langchain4j.easy-rag.path=/path/to/your/documents
+```
+
+--------------------------------
+
+### Langchain4j RAG Functionality
+
+Source: https://github.com/quarkiverse/quarkus-langchain4j/blob/main/integration-tests/simple-ollama/src/main/resources/META-INF/resources/index.html
+
+Functionalities related to Retrieval-Augmented Generation (RAG), including creating RAG chains.
+
+```Java
+import dev.langchain4j.rag.content.retriever.ContentRetriever;
+import dev.langchain4j.rag.content.retriever.EmbeddingSearchContentRetriever;
+import dev.langchain4j.rag.content.retriever.Document
+
+// Example usage of RAG chain
+ContentRetriever contentRetriever = EmbeddingSearchContentRetriever.builder()
+    .embeddingModel(embeddingModel)
+    .vectorStore(vectorStore)
+    .maxResults(5)
+    .build();
+
+// Chain creation would typically involve a ChatLanguageModel and the retriever
+```
+
+--------------------------------
+
+### Customize Embeddings File
+
+Source: https://github.com/quarkiverse/quarkus-langchain4j/blob/main/docs/modules/ROOT/pages/rag-easy-rag.adoc
+
+Allows customization of the filename used for storing and loading reusable embeddings.
+
+```properties
+quarkus.langchain4j.easy-rag.reuse-embeddings.file=easy-rag-embeddings.json
+```
+
+--------------------------------
+
+### Quarkus LangChain4j Easy RAG Bot REST Endpoint
+
+Source: https://github.com/quarkiverse/quarkus-langchain4j/blob/main/rag/easy-rag/runtime/src/main/codestarts/quarkus/langchain4j-easyrag-codestart/base/README.tpl.qute.md
+
+This Java code snippet demonstrates how to inject and use the LangChain4j Bot service within a Quarkus REST endpoint. It handles POST requests with plain text input and returns a plain text response from the bot.
+
+```java
+import jakarta.inject.Inject;
+import jakarta.ws.rs.POST;
+import jakarta.ws.rs.Path;
+import jakarta.ws.rs.Produces;
+import jakarta.ws.rs.core.MediaType;
+
+@Path("/chat")
+public class ChatResource {
+
+    @Inject
+    Bot bot;
+    
+    @POST
+    @Produces(MediaType.TEXT_PLAIN)
+    public String chat(String q) {
+        return bot.chat(q);
+    }
+}
+```
+
+--------------------------------
+
+### Select Embedding Model Provider
+
+Source: https://github.com/quarkiverse/quarkus-langchain4j/blob/main/docs/modules/ROOT/pages/rag-easy-rag.adoc
+
+Specifies the embedding model provider when multiple embedding model extensions are present in the application.
+
+```properties
+quarkus.langchain4j.embedding-model.provider=openai
+```
+
+--------------------------------
+
+### Configure Document Ingestion Path Type
+
+Source: https://github.com/quarkiverse/quarkus-langchain4j/blob/main/docs/modules/ROOT/pages/rag-easy-rag.adoc
+
+Defines the type of path for document ingestion. Can be a local filesystem path or a path relative to the application's classpath.
+
+```properties
+quarkus.langchain4j.easy-rag.path-type=CLASSPATH
+```
+
+--------------------------------
+
+### Configure Document Splitter Max Segment Size
+
+Source: https://github.com/quarkiverse/quarkus-langchain4j/blob/main/docs/modules/ROOT/pages/rag-easy-rag.adoc
+
+Sets the maximum length of a single document segment, in tokens, during the ingestion process.
+
+```properties
+quarkus.langchain4j.easy-rag.max-segment-size=300
+```
+
+--------------------------------
+
+### Configure OpenAI Serving Infrastructure
+
+Source: https://github.com/quarkiverse/quarkus-langchain4j/blob/main/samples/chatbot-easy-rag/README.md
+
+Configuration property to set the base URL for compatible OpenAI serving infrastructure. The API key is often not needed when using a custom base URL.
+
+```properties
+quarkus.langchain4j.openai.base-url=http://yourerver
+```
+
+--------------------------------
+
+### Retrieval Augmented Generation (RAG) Example
+
+Source: https://github.com/quarkiverse/quarkus-langchain4j/blob/main/integration-tests/simple-ollama/src/main/resources/META-INF/resources/index.html
+
+Example of implementing Retrieval Augmented Generation (RAG) using Langchain4j and Quarkus. This involves a retriever and a response generator.
+
+```Java
+import jakarta.inject.Inject;
+import jakarta.ws.rs.GET;
+import jakarta.ws.rs.Path;
+import jakarta.ws.rs.QueryParam;
+import dev.langchain4j.data.document.Document;
+import dev.langchain4j.data.embedding.Embedding;
+import dev.langchain4j.data.segment.TextSegment;
+import dev.langchain4j.model.chat.ChatLanguageModel;
+import dev.langchain4j.model.embedding.EmbeddingModel;
+import dev.langchain4j.retriever.Retriever;
+import dev.langchain4j.service.AiServices;
+import dev.langchain4j.store.embedding.EmbeddingStore;
+
+import java.util.List;
+
+@Path("/rag")
+public class RagResource {
+
+    @Inject
+    ChatLanguageModel chatLanguageModel;
+
+    @Inject
+    EmbeddingModel embeddingModel;
+
+    @Inject
+    EmbeddingStore<TextSegment> embeddingStore;
+
+    @Inject
+    Retriever<TextSegment> retriever;
+
+    @GET
+    @Path("/query")
+    public String query(@QueryParam("question") String question) {
+        // Add documents to the store (typically done during application startup or data ingestion)
+        // addDocument("Your document content here...");
+
+        // Create a RAG chain
+        RagChain ragChain = AiServices.create(RagChain.class,
+                chatLanguageModel,
+                retriever);
+
+        return ragChain.answer(question);
+    }
+
+    // Helper method to add documents (example)
+    private void addDocument(String text) {
+        Document document = Document.from(text);
+        List<Embedding> embeddings = embeddingModel.embed(document.textSegments());
+        embeddingStore.addAll(embeddings, document.textSegments());
+    }
+
+    // Define the RAG interface
+    interface RagChain {
+        String answer(String question);
+    }
+}
+```
+
+--------------------------------
+
+### Create Content Aggregator
+
+Source: https://github.com/quarkiverse/quarkus-langchain4j/blob/main/docs/modules/ROOT/pages/rag-contextual-rag.adoc
+
+Demonstrates how to create a custom ContentAggregator to score, rerank, and filter retrieved content for RAG workflows. This allows for fine-grained control over the relevance of information included in the final prompt.
+
+```java
+ContentAggregator aggregator = new DefaultContentAggregator();
+```
+
+--------------------------------
+
+### Retrieval Augmented Generation (RAG) Example
+
+Source: https://github.com/quarkiverse/quarkus-langchain4j/blob/main/integration-tests/simple-ollama/src/main/resources/META-INF/resources/index.html
+
+This example illustrates how to implement Retrieval Augmented Generation (RAG) using Langchain4j in Quarkus. It involves setting up a retriever, a prompt template, and a chain to generate responses based on retrieved documents.
+
+```Java
+import jakarta.inject.Inject;
+import dev.langchain4j.data.document.DocumentLoader;
+import dev.langchain4j.data.document.FileSystemDocumentLoader;
+import dev.langchain4j.data.embedding.DocumentTransformer;
+import dev.langchain4j.data.segment.TextSegment;
+import dev.langchain4j.model.embedding.EmbeddingModel;
+import dev.langchain4j.model.chat.ChatLanguageModel;
+import dev.langchain4j.retriever.Retriever;
+import dev.langchain4j.service.AiServices;
+import dev.langchain4j.data.document.splitter.DocumentSplitter;
+import dev.langchain4j.data.document.splitter.ParagraphSplitter;
+import dev.langchain4j.store.embedding.EmbeddingStore;
+import dev.langchain4j.store.embedding.InMemoryEmbeddingStore;
+import dev.langchain4j.model.output.OutputParser;
+import dev.langchain4j.model.output.OutputParsers;
+
+import java.nio.file.Paths;
+
+public class RagService {
+
+    @Inject
+    ChatLanguageModel chatModel;
+
+    @Inject
+    EmbeddingModel embeddingModel;
+
+    private Retriever<TextSegment> retriever;
+
+    public void setupRAG() {
+        // Load documents from file system
+        DocumentLoader documentLoader = new FileSystemDocumentLoader(Paths.get("src/main/resources/documents"));
+        List<Document> documents = documentLoader.load();
+
+        // Split documents into segments
+        DocumentSplitter splitter = new ParagraphSplitter();
+        List<TextSegment> textSegments = splitter.split(documents);
+
+        // Create an embedding store and add segments
+        EmbeddingStore<TextSegment> embeddingStore = new InMemoryEmbeddingStore<>();
+        embeddingStore.addAll(textSegments, embeddingModel.embedAll(textSegments));
+
+        // Create a retriever
+        this.retriever = new EmbeddingStoreRetriever<>(embeddingStore, embeddingModel);
+    }
+
+    public String answerQuestion(String question) {
+        // Define a RAG chain
+        RAGChain<TextSegment> ragChain = RAGChain.builder()
+                .chatLanguageModel(chatModel)
+                .retriever(retriever)
+                .promptTemplate("Answer the following question based on the provided context:\n\n{context}\n\nQuestion: {question}")
+                .outputParser(OutputParsers.STRING_OUTPUT_PARSER)
+                .build();
+
+        return ragChain.execute(question);
+    }
+}
+```
+
+--------------------------------
+
+### RAG End-to-End Flow
+
+Source: https://github.com/quarkiverse/quarkus-langchain4j/blob/main/docs/modules/ROOT/pages/rag.adoc
+
+Illustrates the end-to-end process of Retrieval-Augmented Generation (RAG), from document ingestion and embedding to query processing and LLM response generation.
+
+```mermaid
+flowchart TB
+  A[Documents] --> B[Text Splitter]
+  B --> C[Text Segments]
+  C --> D[Embedding Computation]
+  D --> E[Embeddings]
+  E --> F[Vector Store]
+
+  G[Query] --> H[Query Embedding]
+  H --> I[Find Relevant Segments]
+  I --> J[Relevant Chunks]
+  J --> K[Append to Prompt]
+  K --> L[LLM Response]
+
+```
+
+--------------------------------
+
+### Quarkus Langchain4j RAG Reference
+
+Source: https://github.com/quarkiverse/quarkus-langchain4j/blob/main/docs/modules/ROOT/nav.adoc
+
+Details the Retrieval Augmented Generation (RAG) capabilities in Quarkus Langchain4j, including ingestion pipelines, query-time augmentation, EasyRAG, contextual RAG, and reranking.
+
+```asciidoc
+Retrieval Augmented Generation (RAG)
+Ingestion pipeline
+Query-Time Augmentation
+EasyRAG
+Contextual RAG
+Reranking
+```
+
+--------------------------------
+
+### RAG Key Concepts
+
+Source: https://github.com/quarkiverse/quarkus-langchain4j/blob/main/docs/modules/ROOT/pages/rag.adoc
+
+Defines foundational concepts for Retrieval-Augmented Generation (RAG) applications, including text splitting, embeddings, vector stores, and the retriever component.
+
+```APIDOC
+Concept |Description
+
+|Text Splitter |Divides documents into smaller overlapping or non-overlapping segments for processing.
+|Embedding |A dense vector representation of a text segment computed by an embedding model.
+|Embedding Model |A model trained to convert text into embeddings preserving semantic meaning.
+|Vector Store |A database that allows similarity search over embeddings (e.g., PGVector, Chroma, Weaviate).
+|Query Embedding |The embedding computed from the user’s question.
+|Retriever |A component responsible for finding relevant segments given a query embedding.
+|Augmentor |Optional logic used to enhance the retrieved content (e.g., filtering, re-ranking, transformation).
+|Prompt Injection |Final step of merging query and retrieved content into a prompt for the model.
+
+```
+
+--------------------------------
+
+### Langchain4j RAG Implementation
+
+Source: https://github.com/quarkiverse/quarkus-langchain4j/blob/main/integration-tests/simple-ollama/src/main/resources/META-INF/resources/index.html
+
+This snippet demonstrates a basic Retrieval-Augmented Generation (RAG) implementation using Langchain4j, combining retrieval with language model generation.
+
+```Java
+import dev.langchain4j.data.document.Document;
+import dev.langchain4j.data.document.DocumentLoader;
+import dev.langchain4j.data.embedding.Embedding;
+import dev.langchain4j.data.segment.TextSegment;
+import dev.langchain4j.model.chat.ChatLanguageModel;
+import dev.langchain4j.model.embedding.EmbeddingModel;
+import dev.langchain4j.model.output.Response;
+import dev.langchain4j.retriever.Retriever;
+import dev.langchain4j.retriever.EmbeddingSearchRetriever;
+import dev.langchain4j.store.embedding.EmbeddingStore;
+import dev.langchain4j.store.embedding.InMemoryEmbeddingStore;
+
+import java.util.List;
+
+public class RAGExample {
+
+    private final ChatLanguageModel chatModel;
+    private final EmbeddingModel embeddingModel;
+    private final Retriever<TextSegment> retriever;
+
+    public RAGExample(ChatLanguageModel chatModel, EmbeddingModel embeddingModel, EmbeddingStore<TextSegment> embeddingStore) {
+        this.chatModel = chatModel;
+        this.embeddingModel = embeddingModel;
+        this.retriever = EmbeddingSearchRetriever.builder()
+                .embeddingStore(embeddingStore)
+                .embeddingModel(embeddingModel)
+                .maxResults(1)
+                .build();
+    }
+
+    public String answerQuestion(String question) {
+        List<TextSegment> relevantSegments = retriever.find(question);
+        TextSegment segment = relevantSegments.get(0);
+
+        String prompt = String.format("Answer the question based on the following context:\n\nContext:\n%s\n\nQuestion: %s", segment.text(), question);
+
+        Response<ChatMessage> response = chatModel.generate(prompt);
+        return response.content().text();
+    }
+
+    public static void main(String[] args) {
+        // Example Usage:
+        ChatLanguageModel chatModel = null; // Initialize your ChatLanguageModel
+        EmbeddingModel embeddingModel = null; // Initialize your EmbeddingModel
+        EmbeddingStore<TextSegment> embeddingStore = new InMemoryEmbeddingStore<>();
+
+        // Load and embed documents
+        Document document = DocumentLoader.fromUrl("..."); // Load your document
+        List<TextSegment> segments = document.split();
+        List<Embedding> embeddings = embeddingModel.embedAll(segments);
+        embeddingStore.addAll(embeddings, segments);
+
+        RAGExample ragExample = new RAGExample(chatModel, embeddingModel, embeddingStore);
+        String answer = ragExample.answerQuestion("What is Langchain4j?");
+        System.out.println(answer);
+    }
+}
+```
+
+--------------------------------
+
+### Retrieval Augmented Generation (RAG) with Quarkus Langchain4j
+
+Source: https://github.com/quarkiverse/quarkus-langchain4j/blob/main/integration-tests/simple-ollama/src/main/resources/META-INF/resources/index.html
+
+Illustrates how to implement Retrieval Augmented Generation (RAG) using Langchain4j within Quarkus. This involves setting up document loading, embedding, vector storage, and retrieval mechanisms to enhance LLM responses with external knowledge.
+
+```Java
+import dev.langchain4j.data.document.DocumentLoader;
+import dev.langchain4j.data.document.FileSystemDocumentLoader;
+import dev.langchain4j.data.embedding.Embedding;
+import dev.langchain4j.data.segment.TextSegment;
+import dev.langchain4j.model.embedding.EmbeddingModel;
+import dev.langchain4j.retriever.Retriever;
+import dev.langchain4j.store.embedding.EmbeddingStore;
+import dev.langchain4j.store.embedding.inmemory.InMemoryEmbeddingStore;
+import dev.langchain4j.model.chat.ChatLanguageModel;
+import dev.langchain4j.model.input.PromptTemplate;
+import dev.langchain4j.service.AiServices;
+
+import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.inject.Inject;
+import java.nio.file.Paths;
+
+@ApplicationScoped
+public class RagService {
+
+    @Inject
+    ChatLanguageModel chatLanguageModel;
+    @Inject
+    EmbeddingModel embeddingModel;
+
+    private final EmbeddingStore<TextSegment> embeddingStore = new InMemoryEmbeddingStore<>();
+    private final Retriever<TextSegment> retriever;
+
+    public RagService() {
+        // Load documents (example: from a file)
+        DocumentLoader.load(Paths.get("src/main/resources/documents"), FileSystemDocumentLoader.extensionMatcher("txt"))
+                .forEach(document -> {
+                    embeddingStore.addAll(document.toTextSegments().stream()
+                            .map(segment -> new dev.langchain4j.data.embedding.Embedding(segment, embeddingModel.embed(segment).content()))
+                            .toList());
+                });
+        this.retriever = embeddingStore.asRetriever(10);
+    }
+
+    public String askQuestion(String question) {
+        String promptTemplate = "Use the following information to answer the question: {{information}}\n\nQuestion: {{question}}\n\nAnswer:";
+        String information = retriever.retrieve(question).stream()
+                .map(TextSegment::text)
+                .reduce("", (a, b) -> a + "\n" + b);
+
+        return chatLanguageModel.generate(PromptTemplate.from(promptTemplate).apply(information, question));
+    }
+}
+```
+
+--------------------------------
+
+### Retriever Assembly
+
+Source: https://github.com/quarkiverse/quarkus-langchain4j/blob/main/docs/modules/ROOT/pages/rag-contextual-rag.adoc
+
+Illustrates the final assembly of the retriever component within a RAG workflow. This typically involves configuring the retriever to fetch and process relevant information.
+
+```java
+Retriever retriever = new MultiRetrievalRetriever(
+        new EmbeddingModelRetriever(embeddingModel, textSplitter, embeddingStore),
+        new WebSearchRetriever(webSearch, textSplitter, embeddingStore)
+);
+
+```
+
+--------------------------------
+
+### Langchain4j RAG Chain Example
+
+Source: https://github.com/quarkiverse/quarkus-langchain4j/blob/main/integration-tests/simple-ollama/src/main/resources/META-INF/resources/index.html
+
+This snippet provides an example of a Retrieval Augmented Generation (RAG) chain using Langchain4j in Quarkus. It demonstrates how to combine a retriever with a language model to answer questions based on provided documents.
+
+```Java
+import dev.langchain4j.chain.RAGChain;
+import dev.langchain4j.data.document.Document;
+import dev.langchain4j.data.document.DocumentLoader;
+import dev.langchain4j.data.document.splitter.DocumentSplitter;
+import dev.langchain4j.model.chat.ChatLanguageModel;
+import dev.langchain4j.model.embedding.EmbeddingModel;
+import dev.langchain4j.retriever.Retriever;
+import dev.langchain4j.store.embedding.EmbeddingStore;
+import jakarta.inject.Inject;
+
+import java.util.List;
+
+public class RagChainService {
+
+    @Inject
+    private ChatLanguageModel chatLanguageModel;
+
+    @Inject
+    private EmbeddingModel embeddingModel;
+
+    @Inject
+    private EmbeddingStore<TextSegment> embeddingStore;
+
+    public String askQuestion(String question) {
+        // Load and split documents (example)
+        Document document = DocumentLoader.fromUrl("http://example.com/document.txt");
+        DocumentSplitter splitter = DocumentSplitter.builder().build();
+        List<TextSegment> textSegments = splitter.split(document);
+
+        // Embed and store segments
+        textSegments.forEach(segment -> {
+            Embedding embedding = embeddingModel.embed(segment.text());
+            embeddingStore.add(segment, embedding);
+        });
+
+        // Create retriever
+        Retriever<TextSegment> retriever = EmbeddingStoreRetriever.from(embeddingStore);
+
+        // Create RAG chain
+        RAGChain ragChain = RAGChain.builder()
+                .chatLanguageModel(chatLanguageModel)
+                .retriever(retriever)
+                .build();
+
+        return ragChain.execute(question);
+    }
+}
+```
+
+--------------------------------
+
+### DocumentationAssistant Interface
+
+Source: https://github.com/quarkiverse/quarkus-langchain4j/blob/main/docs/modules/ROOT/pages/quickstart-rag.adoc
+
+Defines the DocumentationAssistant interface with a single 'ask' method for querying documentation. The 'ask' method takes a question string and returns an answer string. The parameter is automatically considered the user message.
+
+```java
+package org.acme;
+
+import io.quarkus.runtime.Quarkus;
+import io.quarkus.runtime.annotations.QuarkusMain;
+import jakarta.inject.Inject;
+import io.quarkus.runtime.QuarkusApplication;
+
+@SystemMessage("You are a Quarkus documentation assistant. Use the retrieved content to answer user questions.")
+public interface DocumentationAssistant {
+
+    String ask(String question);
+
+}
+
+```
+
+--------------------------------
+
+### Automatic RAG Integration with AI Service
+
+Source: https://github.com/quarkiverse/quarkus-langchain4j/blob/main/docs/modules/ROOT/pages/rag-query.adoc
+
+Demonstrates how Quarkus LangChain4j automatically integrates a RetrievalAugmentor with an AI service when a corresponding CDI bean is available. This simplifies enabling RAG for any AI service.
+
+```java
+@RegisterAiService
+public interface Assistant {
+    // Automatically augmented if a RetrievalAugmentor is available
+    String chat(String userMessage);
+}
+```
+
+--------------------------------
+
+### Quarkus Overview Document
+
+Source: https://github.com/quarkiverse/quarkus-langchain4j/blob/main/docs/modules/ROOT/pages/quickstart-rag.adoc
+
+Example content for the quarkus-overview.md file, providing an overview of the Quarkus framework.
+
+```Markdown
+# Quarkus Overview
+
+Quarkus is a Java framework tailored for deployment on Kubernetes. Key technology components surrounding it are OpenJDK HotSpot and GraalVM. Quarkus aims to make Java a leading platform in Kubernetes and serverless environments while offering developers a unified reactive and imperative programming model to address a wider range of distributed application architectures optimally.
+
+Quarkus offers quick scale-up and high-density use in container orchestration platforms such as Kubernetes. Many more application instances can be run given the same hardware resources. After its initial debut, Quarkus underwent several enhancements over the next few months, culminating in a 1.0.0 release within the open-source community in November 2019.
+
+## Design pillars
+```
+
+--------------------------------
+
+### Create Content Retrievers
+
+Source: https://github.com/quarkiverse/quarkus-langchain4j/blob/main/docs/modules/ROOT/pages/rag-contextual-rag.adoc
+
+Demonstrates how to create and provide multiple implementations of ContentRetriever to fetch content from different data sources, such as vector stores, web search, or databases.
+
+```java
+include::{examples-dir}/io/quarkiverse/langchain4j/samples/ContextualRagExample.java[tag=createContentRetrievers,indent=0]
+```
+
+--------------------------------
+
+### Quarkus Langchain4j Dependencies
+
+Source: https://github.com/quarkiverse/quarkus-langchain4j/blob/main/docs/modules/ROOT/pages/quickstart-rag.adoc
+
+Dependencies required for Quarkus Langchain4j integration with OpenAI and pgvector, including support for CLI.
+
+```XML
+<dependency>
+    <groupId>io.quarkiverse.langchain4j</groupId>
+    <artifactId>quarkus-langchain4j-openai</artifactId>
+    <version>{project-version}</version>
+</dependency>
+<dependency>
+    <groupId>dev.langchain4j</groupId>
+    <artifactId>langchain4j-embeddings</artifactId>
+    <version>{langchain4j-embeddings-version}</version>
+</dependency>
+<dependency>
+    <groupId>io.quarkiverse.langchain4j</groupId>
+    <artifactId>quarkus-langchain4j-pgvector</artifactId>
+    <version>{project-version}</version>
+</dependency>
+<!-- For CLI support -->
+<dependency>
+    <groupId>io.quarkus</groupId>
+    <artifactId>quarkus-picocli</artifactId>
+</dependency>
+```
+
+--------------------------------
+
+### Create Default Query Router
+
+Source: https://github.com/quarkiverse/quarkus-langchain4j/blob/main/docs/modules/ROOT/pages/rag-contextual-rag.adoc
+
+Shows how to create the default query router, which typically uses all available retrievers. This component dynamically selects which retriever(s) to invoke based on the query.
+
+```java
+include::{examples-dir}/io/quarkiverse/langchain4j/samples/ContextualRagExample.java[tag=createQueryRouter,indent=0]
+```
+
+--------------------------------
+
+### Hallucination Detection Guardrail for RAG
+
+Source: https://github.com/quarkiverse/quarkus-langchain4j/blob/main/docs/modules/ROOT/pages/guardrails.adoc
+
+Implements a guardrail to detect hallucinations in RAG contexts by comparing the embedding of the LLM's response with the embeddings of the augmented content. It uses a configurable threshold to determine if a hallucination has occurred, returning a success or a reprompt based on the cosine distance.
+
+```java
+package me.escoffier.langchain4j.nomic;
+
+import dev.langchain4j.data.embedding.Embedding;
+import dev.langchain4j.model.output.Response;
+import dev.langchain4j.rag.content.Content;
+import io.quarkiverse.langchain4j.guardrails.OutputGuardrail;
+import io.quarkiverse.langchain4j.guardrails.OutputGuardrailParams;
+import io.quarkiverse.langchain4j.guardrails.OutputGuardrailResult;
+import io.quarkus.logging.Log;
+import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.inject.Inject;
+import org.eclipse.microprofile.config.inject.ConfigProperty;
+
+@ApplicationScoped
+public class HallucinationGuard implements OutputGuardrail {
+
+    @Inject
+    NomicEmbeddingV1 embedding;
+
+    @ConfigProperty(name = "hallucination.threshold", defaultValue = "0.7")
+    double threshold;
+
+    @Override
+    public OutputGuardrailResult validate(OutputGuardrailParams params) {
+        Response<Embedding> embeddingOfTheResponse = embedding.embed(params.responseFromLLM().text());
+        if (params.augmentationResult() == null || params.augmentationResult().contents().isEmpty()) {
+            Log.info("No content to validate against");
+            return success();
+        }
+        float[] vectorOfTheResponse = embeddingOfTheResponse.content().vector();
+        for (Content content : params.augmentationResult().contents()) {
+            Response<Embedding> embeddingOfTheContent = embedding.embed(content.textSegment());
+            float[] vectorOfTheContent = embeddingOfTheContent.content().vector();
+            double distance = cosineDistance(vectorOfTheResponse, vectorOfTheContent);
+            if (distance < threshold) {
+                Log.info("Passed hallucination guardrail: " + distance);
+                return success();
+            }
+        }
+
+        return reprompt("Hallucination detected", "Make sure you use the given documents to produce the response");
+    }
+
+    public static double cosineDistance(float[] vector1, float[] vector2) {
+        double dotProduct = 0.0;
+
+```
+
+--------------------------------
+
+### Running in Prod Mode
+
+Source: https://github.com/quarkiverse/quarkus-langchain4j/blob/main/docs/modules/ROOT/pages/quickstart-rag.adoc
+
+Commands to build and run the Quarkus application in production mode after ensuring PostgreSQL with pgvector is set up and configured.
+
+```bash
+./mvnw clean package
+java -jar target/quarkus-app/quarkus-run.jar
+
+```
+
+--------------------------------
+
+### RAG Integration with Amazon S3 Document Loader
+
+Source: https://github.com/quarkiverse/quarkus-langchain4j/blob/main/docs/modules/ROOT/pages/watsonx-chat-model.adoc
+
+Includes the Maven dependency for the Amazon S3 document loader to interact with IBM Cloud Object Storage for RAG.
+
+```XML
+<dependency>
+    <groupId>dev.langchain4j</groupId>
+    <artifactId>langchain4j-document-loader-amazon-s3</artifactId>
+    <version>...</version>
+</dependency>
+```
+
+--------------------------------
+
+### Running the AI Service Application
+
+Source: https://github.com/quarkiverse/quarkus-langchain4j/blob/main/docs/modules/ROOT/pages/quickstart-rag.adoc
+
+Example of injecting and using the DocumentationAssistant service within a Quarkus application. It demonstrates how to ask a question and print the answer.
+
+```java
+package org.acme;
+
+import io.quarkus.runtime.Quarkus;
+import io.quarkus.runtime.annotations.QuarkusMain;
+import jakarta.inject.Inject;
+import io.quarkus.runtime.QuarkusApplication;
+
+@QuarkusMain
+public class RAGApp implements QuarkusApplication {
+
+    @Inject
+    DocumentationAssistant assistant;
+
+    @Override
+    public int run(String... args) {
+        String answer = assistant.ask("How does Quarkus achieve fast startup times?");
+        System.out.println(answer);
+        return 0;
+    }
+}
+
+```
+
+--------------------------------
+
+### Create Content Injector
+
+Source: https://github.com/quarkiverse/quarkus-langchain4j/blob/main/docs/modules/ROOT/pages/rag-contextual-rag.adoc
+
+Shows how to implement a custom ContentInjector to customize the injection of retrieved content into the final prompt. This is useful for identifying RAG-augmented sections and managing prompt memory.
+
+```java
+ContentInjector contentInjector = new ContentInjector() {
+    @Override
+    public String inject(String prompt, List<Content> contents) {
+        StringBuilder augmentedPrompt = new StringBuilder(prompt);
+        for (Content content : contents) {
+            augmentedPrompt.append("\n---\n").append(content.getQuote());
+        }
+        return augmentedPrompt.toString();
+    }
+};
+```
+
+--------------------------------
+
+### Create Query Router with Fallback
+
+Source: https://github.com/quarkiverse/quarkus-langchain4j/blob/main/docs/modules/ROOT/pages/rag-contextual-rag.adoc
+
+Demonstrates how to configure a query router with a fallback mechanism, ensuring that a default retriever is used if no specific retriever is selected based on the query.
+
+```java
+include::{examples-dir}/io/quarkiverse/langchain4j/samples/ContextualRagExample.java[tag=createQueryRouterWithFallback,indent=0]
+```
+
+--------------------------------
+
+### Document Retrieval (RAG) Configuration
+
+Source: https://github.com/quarkiverse/quarkus-langchain4j/blob/main/docs/modules/ROOT/pages/ai-services.adoc
+
+Shows how to configure document retrieval using RetrievalAugmentor with the @RegisterAiService annotation. If only one retrieval augmentor is configured, the attribute can be omitted.
+
+```java
+@RegisterAiService(retrievalAugmentor = MyRetrievalAugmentorSupplier.class)
+
+```
+
+--------------------------------
+
+### Quarkus Langchain4j Document and Vector Stores
+
+Source: https://github.com/quarkiverse/quarkus-langchain4j/blob/main/docs/modules/ROOT/nav.adoc
+
+Lists and describes various document and vector store integrations for RAG in Quarkus Langchain4j, including Chroma, Infinispan, Milvus, Neo4j, PgVector, Pinecone, Qdrant, Redis, and Weaviate.
+
+```asciidoc
+Document and Vector Stores
+Chroma
+Infinispan
+Milvus
+Neo4j
+PgVector (PostgreSQL)
+Pinecone
+Qdrant
+Redis
+Weaviate
+```
+
+--------------------------------
+
+### Running in Dev Mode
+
+Source: https://github.com/quarkiverse/quarkus-langchain4j/blob/main/docs/modules/ROOT/pages/quickstart-rag.adoc
+
+Command to run the Quarkus application in development mode using Maven.
+
+```bash
+./mvnw quarkus:dev
+
+```
+
+--------------------------------
+
+### Decomposition Prompting for Task Splitting
+
+Source: https://github.com/quarkiverse/quarkus-langchain4j/blob/main/docs/modules/ROOT/pages/guide-prompt-engineering.adoc
+
+Illustrates Decomposition prompting by creating an AI service that breaks down a complex instruction into smaller steps, solves each step, and combines results.
+
+```java
+@RegisterAiService
+@ApplicationScoped
+@SystemMessage("""
+You will receive a task. First decompose it into smaller steps. Then solve each step individually.
+""")
+public interface TaskDecomposer {
+
+@UserMessage("""
+Analyze this article and produce a summary and a list of 5 follow-up actions.
+""")
+String execute(String article);
+
+}
+```
+
+--------------------------------
+
+### Quarkus Langchain4j Configuration
+
+Source: https://github.com/quarkiverse/quarkus-langchain4j/blob/main/docs/modules/ROOT/pages/quickstart-rag.adoc
+
+Configuration properties for setting the vector dimension and OpenAI API key in application.properties.
+
+```Properties
+quarkus.langchain4j.pgvector.dimension=1536
+quarkus.langchain4j.openai.api-key=sk-...
+```
+
+--------------------------------
+
+### Set OpenAI API Key
+
+Source: https://github.com/quarkiverse/quarkus-langchain4j/blob/main/samples/sql-chatbot/README.md
+
+Sets the OpenAI API key as an environment variable, which is a prerequisite for running the example chatbot.
+
+```Shell
+export QUARKUS_LANGCHAIN4J_OPENAI_API_KEY=<your-openai-api-key>
+```
+
+--------------------------------
+
+### Create Custom Query Transformer
+
+Source: https://github.com/quarkiverse/quarkus-langchain4j/blob/main/docs/modules/ROOT/pages/rag-contextual-rag.adoc
+
+Provides a way to create a custom implementation of a QueryTransformer. This allows for more control over how the input query is modified or rewritten before the retrieval process.
+
+```java
+include::{examples-dir}/io/quarkiverse/langchain4j/samples/ContextualRagExample.java[tag=createQueryTransformer,indent=0]
+```
+
+--------------------------------
+
+### Create RetrievalAugmentor
+
+Source: https://github.com/quarkiverse/quarkus-langchain4j/blob/main/docs/modules/ROOT/pages/retrievers.adoc
+
+Demonstrates the creation of a RetrievalAugmentor, a key component for Retrieval Augmented Generation (RAG). This example uses an EmbeddingStoreContentRetriever.
+
+```Java
+include::{examples-dir}/io/quarkiverse/langchain4j/samples/RetrievalAugmentorExample.java[]
+```
