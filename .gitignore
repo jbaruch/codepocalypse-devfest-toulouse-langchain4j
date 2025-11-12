@@ -43,3 +43,7 @@ nb-configuration.xml
 /.quarkus/cli/plugins/
 # TLS Certificates
 .certs/
+
+# Easy RAG local cache
+# Do not commit reusable embeddings; they are a dev-time optimization and can be regenerated.
+easy-rag-embeddings.json
