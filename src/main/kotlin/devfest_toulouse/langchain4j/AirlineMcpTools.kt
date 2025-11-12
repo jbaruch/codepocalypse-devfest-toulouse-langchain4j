@@ -1,4 +1,4 @@
-package dev2next.langchain4j
+package devfest_toulouse.langchain4j
 
 import io.quarkiverse.mcp.server.Tool
 import io.quarkus.logging.Log
