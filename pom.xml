@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>dev2next.langchain4j</groupId>
+    <groupId>devfest-toulouse.langchain4j</groupId>
     <artifactId>codepocalypse-langchain4j</artifactId>
     <version>1.0.0-SNAPSHOT</version>
 
@@ -12,8 +12,8 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <quarkus.platform.artifact-id>quarkus-bom</quarkus.platform.artifact-id>
         <quarkus.platform.group-id>io.quarkus.platform</quarkus.platform.group-id>
-        <quarkus.platform.version>3.28.1</quarkus.platform.version>
-        <kotlin.version>2.1.0</kotlin.version>
+        <quarkus.platform.version>3.29.2</quarkus.platform.version>
+        <kotlin.version>2.2.21</kotlin.version>
         <skipITs>true</skipITs>
         <surefire-plugin.version>3.5.4</surefire-plugin.version>
     </properties>
@@ -75,7 +75,6 @@
 
     <build>
         <sourceDirectory>src/main/kotlin</sourceDirectory>
-        <testSourceDirectory>src/test/kotlin</testSourceDirectory>
         <plugins>
             <plugin>
                 <groupId>${quarkus.platform.group-id}</groupId>
