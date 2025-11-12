@@ -16,7 +16,7 @@ Use Quarkus CLI or Maven archetype to create project:
 
 ```bash
 mvn io.quarkus:quarkus-maven-plugin:3.28.1:create \
-    -DprojectGroupId=dev2next \
+    -DprojectGroupId=devfest-toulouse \
     -DprojectArtifactId=codepocalypse-langchain4j \
     -Dextensions="resteasy-reactive,kotlin,quarkus-config-yaml" \
     -DnoCode
@@ -174,7 +174,7 @@ Create directory structure:
 ```
 src/main/
   kotlin/
-    dev2next/
+    devfest_toulouse/
       langchain4j/
         (future: controller and service files)
   resources/
