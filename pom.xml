@@ -72,10 +72,8 @@
             <groupId>io.quarkiverse.langchain4j</groupId>
             <artifactId>quarkus-langchain4j-mcp</artifactId>
         </dependency>
-        <dependency>
-            <groupId>io.quarkiverse.langchain4j</groupId>
-            <artifactId>quarkus-langchain4j-easy-rag</artifactId>
-        </dependency>
+        <!-- Easy RAG dependency removed - we use MCP tools to read PDFs instead -->
+        <!-- The easy-rag extension requires OpenAI embedding model which isn't available in local Docker Model Runner -->
         <dependency>
             <groupId>io.quarkus</groupId>
             <artifactId>quarkus-kotlin</artifactId>
@@ -106,7 +104,6 @@
 
     <build>
         <sourceDirectory>src/main/kotlin</sourceDirectory>
-        <testSourceDirectory>src/test/kotlin</testSourceDirectory>
         <plugins>
             <plugin>
                 <groupId>${quarkus.platform.group-id}</groupId>
