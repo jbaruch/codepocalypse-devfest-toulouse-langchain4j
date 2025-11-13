@@ -1,4 +1,4 @@
-package dev2next.langchain4j
+package devfest_toulouse.langchain4j
 
 import dev.langchain4j.data.message.UserMessage
 import dev.langchain4j.model.chat.ChatModel
