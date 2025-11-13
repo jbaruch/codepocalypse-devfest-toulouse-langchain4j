@@ -3,92 +3,80 @@ package dev2next.langchain4j
 import io.quarkiverse.mcp.server.Tool
 import io.quarkus.logging.Log
 import jakarta.enterprise.context.ApplicationScoped
-import org.jsoup.Jsoup
+import org.apache.pdfbox.Loader
+import org.apache.pdfbox.text.PDFTextStripper
+import java.io.InputStream
 
 /**
  * MCP Server tools for airline loyalty program information.
- * These tools fetch current information from Delta and United websites
+ * These tools read information from PDF files stored in resources
  * and make it available to the AI assistant via Model Context Protocol.
  */
 @ApplicationScoped
 class AirlineMcpTools {
 
     companion object {
-        private const val DELTA_URL = "https://www.delta.com/us/en/skymiles/medallion-program/how-to-qualify"
-        private const val UNITED_URL = "https://www.united.com/en/us/fly/mileageplus/premier/qualify.html"
+        private const val DELTA_PDF = "/rag/How to Get Medallion Status _ Delta Air Lines.pdf"
+        private const val UNITED_PDF = "/rag/How to Earn Premier Status _ United Airlines.pdf"
     }
 
     /**
-     * Fetches current Delta SkyMiles Medallion qualification requirements.
+     * Reads Delta SkyMiles Medallion qualification requirements from PDF file.
      * Returns comprehensive information about earning Medallion status tiers.
      */
     @Tool(description = "Fetches current Delta SkyMiles Medallion qualification requirements and status tier information")
     fun getDeltaMedallionQualification(): String {
-        Log.info("Fetching Delta Medallion qualification information")
+        Log.info("Reading Delta Medallion qualification information from PDF")
         return try {
-            val doc = Jsoup.connect(DELTA_URL)
-                .userAgent("Mozilla/5.0 (compatible; AirlineLoyaltyBot/1.0)")
-                .timeout(30000)
-                .get()
-
-            val text = doc.body().text()
-            val title = doc.title()
-
-            Log.info("Successfully fetched Delta information: $title (${text.length} characters)")
+            val text = readPdfFile(DELTA_PDF)
+            
+            Log.info("Successfully read Delta information (${text.length} characters)")
             
             // Return structured information
             """
-            Source: $DELTA_URL
-            Title: $title
+            Source: Delta Air Lines PDF (Medallion Program)
             
             Content:
             ${text.take(5000)} // Limit to 5000 chars to avoid token overflow
             
-            Note: This information is from Delta's official website and represents current qualification requirements.
+            Note: This information is from Delta's official documentation and represents current qualification requirements.
             """.trimIndent()
         } catch (e: Exception) {
-            Log.error("Failed to fetch Delta qualification information", e)
-            "Error: Unable to fetch Delta qualification information. ${e.message}"
+            Log.error("Failed to read Delta qualification information", e)
+            "Error: Unable to read Delta qualification information. ${e.message}"
         }
     }
 
     /**
-     * Fetches current United MileagePlus Premier qualification requirements.
+     * Reads United MileagePlus Premier qualification requirements from PDF file.
      * Returns comprehensive information about earning Premier status tiers.
      */
     @Tool(description = "Fetches current United MileagePlus Premier qualification requirements and status tier information")
     fun getUnitedPremierQualification(): String {
-        Log.info("Fetching United Premier qualification information")
+        Log.info("Reading United Premier qualification information from PDF")
         return try {
-            val doc = Jsoup.connect(UNITED_URL)
-                .userAgent("Mozilla/5.0 (compatible; AirlineLoyaltyBot/1.0)")
-                .timeout(30000)
-                .get()
-
-            val text = doc.body().text()
-            val title = doc.title()
-
-            Log.info("Successfully fetched United information: $title (${text.length} characters)")
+            val text = readPdfFile(UNITED_PDF)
+            
+            Log.info("Successfully read United information (${text.length} characters)")
             
             // Return structured information
             """
-            Source: $UNITED_URL
-            Title: $title
+            Source: United Airlines PDF (MileagePlus Premier Program)
             
             Content:
             ${text.take(5000)} // Limit to 5000 chars to avoid token overflow
             
-            Note: This information is from United's official website and represents current qualification requirements.
+            Note: This information is from United's official documentation and represents current qualification requirements.
             """.trimIndent()
         } catch (e: Exception) {
-            Log.error("Failed to fetch United qualification information", e)
-            "Error: Unable to fetch United qualification information. ${e.message}"
+            Log.error("Failed to read United qualification information", e)
+            "Error: Unable to read United qualification information. ${e.message}"
         }
     }
 
     /**
      * Compares qualification requirements between Delta and United programs.
-     * Fetches information from both airlines and provides a comparative analysis.
+     * Reads information from both airline PDF files and provides a comparative analysis.
      */
     @Tool(description = "Compares Delta SkyMiles Medallion and United MileagePlus Premier qualification requirements")
     fun compareAirlinePrograms(): String {
@@ -108,5 +96,21 @@ class AirlineMcpTools {
         
         Use this information to provide a detailed comparison based on the customer's needs.
         """.trimIndent()
+    }
+
+    /**
+     * Helper method to read text content from a PDF file.
+     */
+    private fun readPdfFile(resourcePath: String): String {
+        val inputStream: InputStream = javaClass.getResourceAsStream(resourcePath)
+            ?: throw IllegalArgumentException("PDF file not found: $resourcePath")
+        
+        return inputStream.use { stream ->
+            val pdfBytes = stream.readAllBytes()
+            Loader.loadPDF(pdfBytes).use { document ->
+                val stripper = PDFTextStripper()
+                stripper.getText(document)
+            }
+        }
     }
 }
